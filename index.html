@@ -29,23 +29,21 @@
       display: block;
     }
 
-    /* ✅ Overlayed Text */
+    /* ✅ Overlayed Text at Top Center */
     .hero-overlay {
       position: absolute;
-      top: 50%;
+      top: 10%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       text-align: center;
       color: white;
       padding: 20px;
-      animation: fadeInUp 2s ease-out forwards;
-      opacity: 0;
     }
 
     .hero-overlay h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 900;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
@@ -55,24 +53,12 @@
       margin: 0 auto;
     }
 
-    /* ✅ Fade-in animation */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -40%);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    /* ✅ CTA Buttons below video */
+    /* ✅ CTA Buttons right below video */
     .cta-container {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 40px 0;
+      margin: 30px auto;
     }
 
     .cta-button {
@@ -104,7 +90,7 @@
 
     /* ✅ Spacing for sections */
     .hero + * {
-      margin-top: 100px;
+      margin-top: 50px;
     }
 
     .team-container {
@@ -184,21 +170,21 @@
   <section class="hero" id="home">
     <!-- Video Background -->
     <video autoplay muted loop playsinline>
-      <source src="Proto Dyna01.mp4" type="video/mp4">
+      <source src="Proto Dyna03.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-    <!-- Text Overlay -->
+    <!-- Text Overlay at Top -->
     <div class="hero-overlay">
       <h1 class="glitch-text" data-text="Innovate. Simulate. Drive.">Innovate. Simulate. Drive.</h1>
       <p class="subtitle">Redefining electric and ADAS / ADS mobility through engineering and AI-powered innovation.</p>
     </div>
   </section>
 
-  <!-- CTA Buttons BELOW video -->
+  <!-- ✅ CTA Buttons directly under video -->
   <div class="cta-container">
     <a href="#about" class="cta-button cta-primary">Our Story</a>
-    <a href="#about" class="cta-button cta-primary">Meet The Team</a>
+    <a href="#team" class="cta-button cta-primary">Meet The Team</a>
     <a href="#projects" class="cta-button cta-secondary">Explore Projects</a>
   </div>
 
