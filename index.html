@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +18,27 @@
             width: 100%;
             height: auto;
             object-fit: cover;
+        }
+        .hero {
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        /* ✅ Add space after hero */
+        .hero + * {
+            margin-top: 100px;
         }
         .team-container {
             display: flex;
@@ -89,7 +109,7 @@
             <p class="subtitle">Redefining electric and ADAS / ADS mobility through engineering and AI-powered innovation.</p>
             <div class="cta-container">
                 <a href="#about" class="cta-button cta-primary">Our Story</a>
-                  <a href="#about" class="cta-button cta-primary">Meet The Team</a>
+                <a href="#about" class="cta-button cta-primary">Meet The Team</a>
                 <a href="#projects" class="cta-button cta-secondary">Explore Projects</a>
             </div>
         </div>
@@ -110,36 +130,33 @@
             </div>
         </div>
 
-
-
-        
         <!-- Meet the Team -->
         <h3>Meet the Team</h3>
         <section class="features" id="Meet The Team">
-        <h2 class="section-title">Meet The Team</h2>
-        <div class="teammember-container">
-            <div class="team-member">
-                <img src="1234.jpg" alt="Team Member 1">
-                <h4>Logesh SELVARAJ</h4>
-                <p>ADAS & Autonomous Systems</p>
+            <h2 class="section-title">Meet The Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="1234.jpg" alt="Team Member 1">
+                    <h4>Logesh SELVARAJ</h4>
+                    <p>ADAS & Autonomous Systems</p>
+                </div>
+                <div class="team-member">
+                    <img src="nara.jpg" alt="Team Member 2">
+                    <h4>Narayan KUMAR</h4>
+                    <p>Vehicle Dynamics</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/team3.jpg" alt="Team Member 3">
+                    <h4>Anirudh KRISHNAN</h4>
+                    <p>Vehicle Dynamics</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/team4.jpg" alt="Team Member 4">
+                    <h4>Sherwin Joy</h4>
+                    <p>Powertrain</p>
+                </div>
             </div>
-            <div class="team-member">
-                <img src="nara.jpg" alt="Team Member 2">
-                <h4>Narayan KUMAR</h4>
-                <p>Vehicle Dynamics</p>
-            </div>
-            <div class="team-member">
-                <img src="assets/team3.jpg" alt="Team Member 3">
-                <h4>Anirudh KRISHNAN</h4>
-                <p>Vehicle Dynamics</p>
-            </div>
-            <div class="team-member">
-                <img src="assets/team4.jpg" alt="Team Member 4">
-                <h4>Sherwin Joy</h4>
-                <p>Powertrain</p>
-            </div>
-        </div>
-            </div>
+        </section>
     </section>
 
     <!-- Projects Section -->
@@ -213,8 +230,5 @@
     <script src="templatemo-electric-scripts.js"></script>
 </body>
 </html>
-
-
-
 
 
