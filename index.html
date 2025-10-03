@@ -16,11 +16,13 @@
         }
         .hero video {
             width: 100%;
-            height: auto;
+            height: 100vh;   /* Fullscreen background video */
             object-fit: cover;
         }
         .hero {
             position: relative;
+            height: 100vh;
+            overflow: hidden;
         }
         .hero-overlay {
             position: absolute;
@@ -35,6 +37,13 @@
             text-align: center;
             color: white;
             padding: 20px;
+            z-index: 2; /* Above video */
+        }
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-top: 20px;
         }
         /* ✅ Add space after hero */
         .hero + * {
@@ -76,6 +85,20 @@
     </style>
 </head>
 <body>
+    <!-- ✅ Background elements from Electric Xtra -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Animated Shapes -->
+    <div class="shapes-container">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -100,25 +123,20 @@
 
     <!-- Hero Section with Motion Video -->
     <section class="hero" id="home">
-       
-        <div class="hero-overlay">
-            <h1 class="glitch-text" data-text="Innovate. Simulate. Drive.">Innovate. Simulate. Drive.</h1>
-            <p class="subtitle">Redefining electric and ADAS / ADS mobility through engineering and AI-powered innovation.</p>
-            </div>
- <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline>
             <source src="Proto Dyna03.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-            
+        <div class="hero-overlay">
+            <h1 class="glitch-text" data-text="Innovate. Simulate. Drive.">Innovate. Simulate. Drive.</h1>
+            <p class="subtitle">Redefining electric and ADAS / ADS mobility through engineering and AI-powered innovation.</p>
             <div class="cta-container">
                 <a href="#about" class="cta-button cta-primary">Our Story</a>
                 <a href="#about" class="cta-button cta-primary">Meet The Team</a>
                 <a href="#projects" class="cta-button cta-secondary">Explore Projects</a>
-            
+            </div>
         </div>
     </section>
-
-   
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -129,35 +147,33 @@
                 <p>We believe that hands-on experience fuels creativity. Every project is a step towards building sustainable, intelligent, and futuristic vehicles that push the boundaries of mobility.</p>
             </div>
         </div>
-           </section>
+    </section>
 
-        <!-- Meet the Team -->
-  
-        <section class="features" id="Meet The Team">
-            <h2 class="section-title">Meet The Team</h2>
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="1234.jpg" alt="Team Member 1">
-                    <h4>Logesh SELVARAJ</h4>
-                    <p>ADAS & Autonomous Systems</p>
-                </div>
-                <div class="team-member">
-                    <img src="nara.jpg" alt="Team Member 2">
-                    <h4>Narayan KUMAR</h4>
-                    <p>Vehicle Dynamics</p>
-                </div>
-                <div class="team-member">
-                    <img src="assets/team3.jpg" alt="Team Member 3">
-                    <h4>Anirudh KRISHNAN</h4>
-                    <p>Vehicle Dynamics</p>
-                </div>
-                <div class="team-member">
-                    <img src="assets/team4.jpg" alt="Team Member 4">
-                    <h4>Sherwin Joy</h4>
-                    <p>Powertrain</p>
-                </div>
+    <!-- Meet the Team -->
+    <section class="features" id="Meet The Team">
+        <h2 class="section-title">Meet The Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="1234.jpg" alt="Team Member 1">
+                <h4>Logesh SELVARAJ</h4>
+                <p>ADAS & Autonomous Systems</p>
             </div>
-     
+            <div class="team-member">
+                <img src="nara.jpg" alt="Team Member 2">
+                <h4>Narayan KUMAR</h4>
+                <p>Vehicle Dynamics</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/team3.jpg" alt="Team Member 3">
+                <h4>Anirudh KRISHNAN</h4>
+                <p>Vehicle Dynamics</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/team4.jpg" alt="Team Member 4">
+                <h4>Sherwin Joy</h4>
+                <p>Powertrain</p>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -231,6 +247,8 @@
     <script src="templatemo-electric-scripts.js"></script>
 </body>
 </html>
+
+
 
 
 
