@@ -170,6 +170,40 @@
       color: white;
       font-weight: 700;
     }
+
+/* --- FIX: ensure next section (CTA) appears right after hero --- */
+.hero {
+  position: relative;  /* make hero content contained */
+  height: auto;        /* let it expand naturally */
+}
+
+.hero object,
+.hero video,
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero + .cta-container {
+  position: relative;
+  top: 0;
+  margin-top: 20px;   /* Adjust this to visually fit */
+}
+
+/* Prevent template background layers from overlapping next sections */
+.grid-bg,
+.gradient-overlay,
+.scanlines,
+.shapes-container,
+#particles {
+  pointer-events: none;
+  position: fixed;   /* keep them in the background */
+  z-index: 0;
+}
+
+
+    
   </style>
 </head>
 
@@ -339,4 +373,5 @@
   <script src="templatemo-electric-scripts.js"></script>
 </body>
 </html>
+
 
