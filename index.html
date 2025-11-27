@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +29,13 @@
 
     .hero-svg {
       width: 100%;
-      height: 450px;
+      height: 450px; /* or adjust as needed */
       display: block;
       object-fit: contain;
       margin: 0 auto;
     }
 
+    /* Keep the glitch / flicker effect on the h1 with class "glitch-text" */
     .hero-text {
       margin-top: 20px;
       position: relative;
@@ -41,13 +43,14 @@
     }
 
     .hero-text h1.glitch-text {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Orbitron', sans-serif; /* or whatever original font was */
       font-size: 2.8rem;
       font-weight: 900;
       margin-bottom: 10px;
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: 2px;
+      /* Do not override animation or flicker from template */
     }
 
     .hero-text .subtitle {
@@ -59,7 +62,7 @@
       color: white;
     }
 
-    /* CTA Buttons */
+    /* CTA Buttons right under hero */
     .cta-container {
       display: flex;
       justify-content: center;
@@ -96,59 +99,27 @@
       background: #cc4a00;
     }
 
+    /* Ensure the CTA isn’t pushed to bottom by layout issues */
     .hero + .cta-container {
-      margin-top: -50px;
+      margin-top: -50px; /* you can adjust so it's visually closer if needed */
     }
 
-    /* ------------------------- */
-    /* ⭐ ABOUT SECTION – ENHANCED ⭐ */
-    /* ------------------------- */
-
+    /* About Section – center and readable */
     .about {
       text-align: center;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 70px 20px;
+      padding: 60px 20px;
       color: white;
     }
 
-    .about h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      color: #00c8ff;
-    }
-
-    .about-container p {
-      text-align: justify;
-      font-size: 1.15rem;
-      line-height: 1.85;
-      margin: 18px auto;
-      max-width: 850px;
-      color: #e0e0e0;
-    }
-
-    .about-container p + p {
-      margin-top: 28px;
-    }
-
-    /* Mobile fix */
-    @media (max-width: 768px) {
-      .about {
-        padding-top: 40px;
-      }
-
-      .about h2 {
-        font-size: 1.9rem;
-        margin-bottom: 20px;
-      }
-
-      .about-container p {
-        font-size: 1.05rem;
-      }
+    .about-text p {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 20px auto;
+      max-width: 900px;
+      color: #ddd;
     }
 
     /* Team Section */
@@ -191,7 +162,7 @@
       margin-top: 20px;
     }
 
-    /* Section Titles */
+    /* Section titles */
     .section-title {
       text-align: center;
       font-size: 2rem;
@@ -200,21 +171,44 @@
       font-weight: 700;
     }
 
-    /* Background Template Fix */
-    .grid-bg,
-    .gradient-overlay,
-    .scanlines,
-    .shapes-container,
-    #particles {
-      pointer-events: none;
-      position: fixed;
-      z-index: 0;
-    }
+/* --- FIX: ensure next section (CTA) appears right after hero --- */
+.hero {
+  position: relative;  /* make hero content contained */
+  height: auto;        /* let it expand naturally */
+}
+
+.hero object,
+.hero video,
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero + .cta-container {
+  position: relative;
+  top: 0;
+  margin-top: 20px;   /* Adjust this to visually fit */
+}
+
+/* Prevent template background layers from overlapping next sections */
+.grid-bg,
+.gradient-overlay,
+.scanlines,
+.shapes-container,
+#particles {
+  pointer-events: none;
+  position: fixed;   /* keep them in the background */
+  z-index: 0;
+}
+
+
+    
   </style>
 </head>
 
 <body>
-  <!-- Background Effects -->
+  <!-- Background effects -->
   <div class="grid-bg"></div>
   <div class="gradient-overlay"></div>
   <div class="scanlines"></div>
@@ -225,7 +219,7 @@
   </div>
   <div id="particles"></div>
 
-  <!-- Navbar -->
+  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#home" class="logo-link">
@@ -256,35 +250,30 @@
     </div>
   </section>
 
-  <!-- CTA Buttons -->
+  <!-- CTA Buttons below hero -->
   <div class="cta-container">
     <a href="#about" class="cta-button cta-primary">Our Story</a>
     <a href="#team" class="cta-button cta-primary">Meet Our Team</a>
     <a href="#projects" class="cta-button cta-secondary">Explore Projects</a>
   </div>
 
-  <!-- ⭐ UPDATED ABOUT SECTION -->
-  <section id="about" class="about">
-    <h2>About ProtoDYNA Mobility</h2>
-
-    <div class="about-container">
-      <p>
-        Born from curiosity and passion, ProtoDYNA Mobility started as a small
-        team of young engineers experimenting with vehicle dynamics and autonomous
-        systems. What began as a university project quickly evolved into a
-        platform for innovation, learning, and collaboration in electric and
-        autonomous mobility.
-      </p>
-
-      <p>
-        We believe that hands-on experience fuels creativity. Every project is a
-        step towards building sustainable, intelligent, and futuristic vehicles
-        that push the boundaries of mobility.
-      </p>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2 class="section-title">About ProtoDYNA Mobility</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Born from curiosity and passion, ProtoDYNA Mobility started as a small team of young engineers experimenting with vehicle dynamics and autonomous systems.
+          What began as a university project quickly evolved into a platform for innovation, learning, and collaboration in electric and autonomous mobility.
+        </p>
+        <p>
+          We believe that hands-on experience fuels creativity. Every project is a step towards building sustainable, intelligent, and futuristic vehicles that push the boundaries of mobility.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Team Section -->
+  <!-- Meet the Team -->
   <section class="features" id="team">
     <h2 class="section-title">Meet The Team</h2>
     <div class="team-container">
@@ -354,7 +343,6 @@
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
       </div>
-
       <div class="contact-info">
         <h3>Connect With Us</h3>
         <div class="info-item">
@@ -364,7 +352,6 @@
             <p>protodynamobility@gmail.com</p>
           </div>
         </div>
-
         <div class="info-item">
           <div class="info-icon">📱</div>
           <div class="info-details">
@@ -386,6 +373,5 @@
   <script src="templatemo-electric-scripts.js"></script>
 </body>
 </html>
-
 
 
