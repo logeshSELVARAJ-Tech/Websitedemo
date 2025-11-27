@@ -29,13 +29,12 @@
 
     .hero-svg {
       width: 100%;
-      height: 450px; /* or adjust as needed */
+      height: 450px;
       display: block;
       object-fit: contain;
       margin: 0 auto;
     }
 
-    /* Keep the glitch / flicker effect on the h1 with class "glitch-text" */
     .hero-text {
       margin-top: 20px;
       position: relative;
@@ -43,14 +42,13 @@
     }
 
     .hero-text h1.glitch-text {
-      font-family: 'Orbitron', sans-serif; /* or whatever original font was */
+      font-family: 'Orbitron', sans-serif;
       font-size: 2.8rem;
       font-weight: 900;
       margin-bottom: 10px;
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: 2px;
-      /* Do not override animation or flicker from template */
     }
 
     .hero-text .subtitle {
@@ -62,7 +60,7 @@
       color: white;
     }
 
-    /* CTA Buttons right under hero */
+    /* CTA Buttons */
     .cta-container {
       display: flex;
       justify-content: center;
@@ -99,28 +97,39 @@
       background: #cc4a00;
     }
 
-    /* Ensure the CTA isn’t pushed to bottom by layout issues */
     .hero + .cta-container {
-      margin-top: -50px; /* you can adjust so it's visually closer if needed */
+      margin-top: -50px;
     }
 
-    /* About Section – center and readable */
+    /* ------------------------- */
+    /* ⭐ ABOUT SECTION - FIXED ⭐ */
+    /* ------------------------- */
+
     .about {
       text-align: center;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 90px 20px;  /* more top spacing */
       color: white;
     }
 
     .about-text p {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      text-align: justify;      /* main fix */
+      font-size: 1.2rem;
+      line-height: 1.9;
       margin: 20px auto;
-      max-width: 900px;
+      max-width: 850px;
       color: #ddd;
     }
+
+    .about-text p + p {
+      margin-top: 30px;
+    }
+
+    /* ------------------------- */
+    /* END ABOUT FIX */
+    /* ------------------------- */
+
 
     /* Team Section */
     .team-container {
@@ -162,7 +171,7 @@
       margin-top: 20px;
     }
 
-    /* Section titles */
+    /* Section Titles */
     .section-title {
       text-align: center;
       font-size: 2rem;
@@ -171,44 +180,21 @@
       font-weight: 700;
     }
 
-/* --- FIX: ensure next section (CTA) appears right after hero --- */
-.hero {
-  position: relative;  /* make hero content contained */
-  height: auto;        /* let it expand naturally */
-}
-
-.hero object,
-.hero video,
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.hero + .cta-container {
-  position: relative;
-  top: 0;
-  margin-top: 20px;   /* Adjust this to visually fit */
-}
-
-/* Prevent template background layers from overlapping next sections */
-.grid-bg,
-.gradient-overlay,
-.scanlines,
-.shapes-container,
-#particles {
-  pointer-events: none;
-  position: fixed;   /* keep them in the background */
-  z-index: 0;
-}
-
-
-    
+    /* Background Template Fix */
+    .grid-bg,
+    .gradient-overlay,
+    .scanlines,
+    .shapes-container,
+    #particles {
+      pointer-events: none;
+      position: fixed;
+      z-index: 0;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Background effects -->
+  <!-- Background Effects -->
   <div class="grid-bg"></div>
   <div class="gradient-overlay"></div>
   <div class="scanlines"></div>
@@ -219,7 +205,7 @@
   </div>
   <div id="particles"></div>
 
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#home" class="logo-link">
@@ -250,14 +236,14 @@
     </div>
   </section>
 
-  <!-- CTA Buttons below hero -->
+  <!-- CTA Buttons -->
   <div class="cta-container">
     <a href="#about" class="cta-button cta-primary">Our Story</a>
     <a href="#team" class="cta-button cta-primary">Meet Our Team</a>
     <a href="#projects" class="cta-button cta-secondary">Explore Projects</a>
   </div>
 
-  <!-- About Section -->
+  <!-- ⭐ ABOUT SECTION (JUSTIFIED) ⭐ -->
   <section class="about" id="about">
     <h2 class="section-title">About ProtoDYNA Mobility</h2>
     <div class="about-content">
@@ -273,7 +259,7 @@
     </div>
   </section>
 
-  <!-- Meet the Team -->
+  <!-- Team Section -->
   <section class="features" id="team">
     <h2 class="section-title">Meet The Team</h2>
     <div class="team-container">
@@ -343,6 +329,7 @@
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
       </div>
+
       <div class="contact-info">
         <h3>Connect With Us</h3>
         <div class="info-item">
@@ -352,6 +339,7 @@
             <p>protodynamobility@gmail.com</p>
           </div>
         </div>
+
         <div class="info-item">
           <div class="info-icon">📱</div>
           <div class="info-details">
