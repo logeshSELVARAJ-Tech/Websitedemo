@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,34 +101,55 @@
     }
 
     /* ------------------------- */
-    /* ⭐ ABOUT SECTION - FIXED ⭐ */
+    /* ⭐ ABOUT SECTION – ENHANCED ⭐ */
     /* ------------------------- */
 
     .about {
       text-align: center;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 90px 20px;  /* more top spacing */
+      padding: 70px 20px;
       color: white;
     }
 
-    .about-text p {
-      text-align: justify;      /* main fix */
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin: 20px auto;
+    .about h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      color: #00c8ff;
+    }
+
+    .about-container p {
+      text-align: justify;
+      font-size: 1.15rem;
+      line-height: 1.85;
+      margin: 18px auto;
       max-width: 850px;
-      color: #ddd;
+      color: #e0e0e0;
     }
 
-    .about-text p + p {
-      margin-top: 30px;
+    .about-container p + p {
+      margin-top: 28px;
     }
 
-    /* ------------------------- */
-    /* END ABOUT FIX */
-    /* ------------------------- */
+    /* Mobile fix */
+    @media (max-width: 768px) {
+      .about {
+        padding-top: 40px;
+      }
 
+      .about h2 {
+        font-size: 1.9rem;
+        margin-bottom: 20px;
+      }
+
+      .about-container p {
+        font-size: 1.05rem;
+      }
+    }
 
     /* Team Section */
     .team-container {
@@ -243,26 +263,26 @@
     <a href="#projects" class="cta-button cta-secondary">Explore Projects</a>
   </div>
 
+  <!-- ⭐ UPDATED ABOUT SECTION -->
   <section id="about" class="about">
-  <h2>ABOUT PROTODNYA MOBILITY</h2>
+    <h2>About ProtoDYNA Mobility</h2>
 
-  <div class="about-container">
-    <p>
-      Born from curiosity and passion, ProtoDYNA Mobility started as a small
-      team of young engineers experimenting with vehicle dynamics and autonomous
-      systems. What began as a university project quickly evolved into a
-      platform for innovation, learning, and collaboration in electric and
-      autonomous mobility.
-    </p>
+    <div class="about-container">
+      <p>
+        Born from curiosity and passion, ProtoDYNA Mobility started as a small
+        team of young engineers experimenting with vehicle dynamics and autonomous
+        systems. What began as a university project quickly evolved into a
+        platform for innovation, learning, and collaboration in electric and
+        autonomous mobility.
+      </p>
 
-    <p>
-      We believe that hands-on experience fuels creativity. Every project is a
-      step towards building sustainable, intelligent, and futuristic vehicles
-      that push the boundaries of mobility.
-    </p>
-  </div>
-</section>
-
+      <p>
+        We believe that hands-on experience fuels creativity. Every project is a
+        step towards building sustainable, intelligent, and futuristic vehicles
+        that push the boundaries of mobility.
+      </p>
+    </div>
+  </section>
 
   <!-- Team Section -->
   <section class="features" id="team">
@@ -366,7 +386,6 @@
   <script src="templatemo-electric-scripts.js"></script>
 </body>
 </html>
-
 
 
 
