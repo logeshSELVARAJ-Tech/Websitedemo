@@ -1129,4 +1129,58 @@ https://templatemo.com/tm-596-electric-xtra
             .shape-square {
                 transform: scale(0.6);
             }
+
+                    /* ---- ABOUT SECTION FIX ---- */
+
+.about {
+  width: 100%;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1100px; /* this makes it STRETCH but still controlled */
+  padding: 0 20px;
+}
+
+.about-container p {
+  text-align: justify;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* ---- MOBILE FIX ---- */
+@media (max-width: 768px) {
+  .about {
+    padding: 70px 15px;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .about-container {
+    max-width: 100%;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;   /* justified text looks bad on narrow screens */
+  }
+}
+
+                    
         }
